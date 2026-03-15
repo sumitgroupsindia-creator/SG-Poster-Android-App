@@ -60,3 +60,11 @@ Thumbs.db
 .cxx
 local.properties
 .claude/
+
+# Keystore & signing (sensitive)
+keystore/
+*.jks
+*.keystore
+*.pem
+pepk.jar
+output.zip
