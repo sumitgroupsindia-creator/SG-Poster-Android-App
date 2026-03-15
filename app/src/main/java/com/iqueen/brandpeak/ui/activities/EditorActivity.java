@@ -1969,7 +1969,11 @@ public class EditorActivity extends AppCompatActivity implements InterstitialAdM
                         Log.e("downaload", sb.toString());
                         Log.e("downaload", "====" + fromFile.getPath());
                         UCrop.Options options2 = new UCrop.Options();
-                        options2.setToolbarColor(getResources().getColor(R.color.white));
+                        options2.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                        options2.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                        options2.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                        options2.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                        options2.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                         options2.setFreeStyleCropEnabled(true);
                         UCrop.of(data.getData(), fromFile).withOptions(options2).start(this);
                     } catch (Exception e) {
@@ -1985,7 +1989,11 @@ public class EditorActivity extends AppCompatActivity implements InterstitialAdM
                         sb2.append(fromFile2.getPath());
                         Log.e("downaload", sb2.toString());
                         UCrop.Options options3 = new UCrop.Options();
-                        options3.setToolbarColor(getResources().getColor(R.color.white));
+                        options3.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                        options3.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                        options3.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                        options3.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                        options3.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                         options3.setFreeStyleCropEnabled(true);
                         UCrop.of(uri, fromFile2).withOptions(options3).start(this);
                     } catch (Exception e2) {

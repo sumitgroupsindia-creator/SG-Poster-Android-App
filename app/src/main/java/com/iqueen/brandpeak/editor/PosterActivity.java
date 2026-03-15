@@ -606,7 +606,11 @@ public class PosterActivity extends AppCompatActivity implements RelStickerView.
             Uri fromFile = Uri.fromFile(new File(getCacheDir(),
                     "SampleCropImage" + System.currentTimeMillis() + ".png"));
             UCrop.Options options2 = new UCrop.Options();
-            options2.setToolbarColor(getResources().getColor(R.color.white));
+            options2.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+            options2.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+            options2.setToolbarWidgetColor(getResources().getColor(R.color.white));
+            options2.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+            options2.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
             options2.setFreeStyleCropEnabled(true);
             UCrop.of(Uri.fromFile(new File(saveBitmap(relStickerView.getMainImageBitmap()))),
                     fromFile).withOptions(options2).start(PosterActivity.this);
@@ -4891,12 +4895,20 @@ public class PosterActivity extends AppCompatActivity implements RelStickerView.
                         if (isChangeMode) {
                             UCrop.Options options = new UCrop.Options();
                             options.withAspectRatio((float) selectedRatio.get(0), (float) selectedRatio.get(1));
-                            options.setToolbarColor(getResources().getColor(R.color.white));
+                            options.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                            options.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                            options.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                            options.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                            options.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                             options.setFreeStyleCropEnabled(false);
                             UCrop.of(data.getData(), fromFile).withOptions(options).start(PosterActivity.this);
                         } else {
                             UCrop.Options options2 = new UCrop.Options();
-                            options2.setToolbarColor(getResources().getColor(R.color.white));
+                            options2.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                            options2.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                            options2.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                            options2.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                            options2.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                             options2.setFreeStyleCropEnabled(true);
                             UCrop.of(data.getData(), fromFile).withOptions(options2).start(PosterActivity.this);
                         }
@@ -4912,11 +4924,19 @@ public class PosterActivity extends AppCompatActivity implements RelStickerView.
                         if (isChangeMode) {
                             UCrop.Options options = new UCrop.Options();
                             options.withAspectRatio((float) selectedRatio.get(0), (float) selectedRatio.get(1));
-                            options.setToolbarColor(getResources().getColor(R.color.white));
+                            options.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                            options.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                            options.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                            options.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                            options.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                             options.setFreeStyleCropEnabled(false);
                             UCrop.of(data.getData(), fromFile2).withOptions(options).start(PosterActivity.this);
                         } else {
-                            options3.setToolbarColor(getResources().getColor(R.color.white));
+                            options3.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                            options3.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                            options3.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                            options3.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                            options3.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                             options3.setFreeStyleCropEnabled(true);
                             UCrop.of(uri, fromFile2).withOptions(options3).start(PosterActivity.this);
                         }

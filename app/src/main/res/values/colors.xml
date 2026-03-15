@@ -415,4 +415,14 @@
 
     <color name="acc_gray">#707070</color>
     <color name="editor_controller_bg">#F4F4F4</color>
+
+    <!-- uCrop color overrides -->
+    <color name="ucrop_color_toolbar_widget">#FFFFFF</color>
+    <color name="ucrop_color_statusbar">#333333</color>
+    <color name="ucrop_color_widget_active">#f59614</color>
+    <color name="ucrop_color_widget_background">#1A1A2E</color>
+    <color name="ucrop_color_widget_text">#FFFFFF</color>
+    <color name="ucrop_color_active_controls_color">#f59614</color>
+    <color name="ucrop_color_active_aspect_ratio">#f59614</color>
+    <color name="ucrop_color_crop_background">#1A1A2E</color>
 </resources>

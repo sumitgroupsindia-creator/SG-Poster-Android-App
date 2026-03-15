@@ -553,7 +553,11 @@ public class CreateVCardActivity extends AppCompatActivity {
                                         Uri fromFile = Uri.fromFile(new File(getCacheDir(),
                                                 "SampleCropImage" + System.currentTimeMillis() + ".png"));
                                         UCrop.Options options2 = new UCrop.Options();
-                                        options2.setToolbarColor(getResources().getColor(R.color.white));
+                                        options2.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                                        options2.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                                        options2.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                                        options2.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                                        options2.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                                         options2.setFreeStyleCropEnabled(true);
                                         UCrop.of(selectedImage, fromFile).withOptions(options2).start(CreateVCardActivity.this);
                                     } catch (Exception e) {

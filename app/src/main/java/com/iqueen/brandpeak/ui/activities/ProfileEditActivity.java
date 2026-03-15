@@ -562,7 +562,11 @@ public class ProfileEditActivity extends AppCompatActivity {
                                         Uri fromFile = Uri.fromFile(new File(getCacheDir(),
                                                 "SampleCropImage" + System.currentTimeMillis() + ".png"));
                                         UCrop.Options options2 = new UCrop.Options();
-                                        options2.setToolbarColor(getResources().getColor(R.color.white));
+                                        options2.setToolbarColor(getResources().getColor(R.color.primary_dark_color));
+                                        options2.setStatusBarColor(getResources().getColor(R.color.primary_dark_color));
+                                        options2.setToolbarWidgetColor(getResources().getColor(R.color.white));
+                                        options2.setActiveControlsWidgetColor(getResources().getColor(R.color.primary_color));
+                                        options2.setToolbarTitle(getString(R.string.ucrop_label_edit_photo));
                                         options2.setFreeStyleCropEnabled(false);
                                         UCrop.of(selectedImage, fromFile).withOptions(options2).withAspectRatio(1, 1).start(ProfileEditActivity.this);
                                     } catch (Exception e) {
