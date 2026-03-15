@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedHorizontalProgress">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="isRounded" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ShapesImage">
+        <attr name="shapeDrawable" format="reference" />
+        <attr name="shape" format="enum">
+            <enum name="octagon" value="1"/>
+            <enum name="diamond" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

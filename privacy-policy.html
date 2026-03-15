@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – SG Digital Poster</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:   #0D47A1;
+      --blue-mid:    #1565C0;
+      --blue-light:  #1E88E5;
+      --blue-pale:   #E3F2FD;
+      --blue-accent: #42A5F5;
+      --text-dark:   #1a1a2e;
+      --text-body:   #374151;
+      --text-muted:  #6B7280;
+      --border:      #DBEAFE;
+      --white:       #ffffff;
+      --radius:      12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-body);
+      background: #f0f4ff;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+      color: var(--white);
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      top: -120px; right: -100px;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      bottom: -80px; left: -60px;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .logo-wrap svg { width: 44px; height: 44px; }
+
+    header h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 15px;
+      opacity: 0.85;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 12px rgba(13,71,161,0.07);
+    }
+    .toc h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--blue-mid);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 32px;
+    }
+    @media (max-width: 560px) { .toc ol { columns: 1; } }
+    .toc li { margin-bottom: 8px; }
+    .toc a {
+      color: var(--blue-light);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--blue-dark); text-decoration: underline; }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 38px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(13,71,161,0.06);
+      scroll-margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--blue-pale);
+    }
+    .icon-box {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      background: var(--blue-pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .section p { margin-bottom: 14px; color: var(--text-body); }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    .section ul, .section ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    .section li { margin-bottom: 8px; color: var(--text-body); }
+
+    /* ── Info Cards ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .info-card {
+      background: var(--blue-pale);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--blue-accent);
+    }
+    .info-card .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--blue-mid);
+      margin-bottom: 5px;
+    }
+    .info-card .value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    /* ── Permission Table ── */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .perm-table thead th {
+      background: var(--blue-pale);
+      color: var(--blue-dark);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border);
+    }
+    .perm-table thead th:first-child { border-radius: 8px 0 0 0; }
+    .perm-table thead th:last-child  { border-radius: 0 8px 0 0; }
+    .perm-table tbody td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .perm-table tbody tr:last-child td { border-bottom: none; }
+    .perm-table tbody tr:hover td { background: #f8fbff; }
+    .perm-tag {
+      display: inline-block;
+      background: var(--blue-pale);
+      color: var(--blue-mid);
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ── Third-party Table ── */
+    .tp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .tp-table thead th {
+      background: var(--blue-pale);
+      color: var(--blue-dark);
+      font-weight: 700;
+      text-align: left;
+      padding: 11px 14px;
+      border-bottom: 2px solid var(--border);
+    }
+    .tp-table tbody td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .tp-table tbody tr:last-child td { border-bottom: none; }
+    .tp-table tbody tr:hover td { background: #f8fbff; }
+    .tp-table a { color: var(--blue-light); text-decoration: none; font-size: 12px; }
+    .tp-table a:hover { text-decoration: underline; }
+
+    /* ── Highlight Box ── */
+    .highlight {
+      background: var(--blue-pale);
+      border-left: 4px solid var(--blue-light);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .highlight strong { color: var(--blue-dark); }
+
+    /* ── Warning Box ── */
+    .warning {
+      background: #FFF8E1;
+      border-left: 4px solid #FFB300;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+
+    /* ── Contact Card ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .contact-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .contact-card p { opacity: 0.9; margin-bottom: 20px; font-size: 15px; }
+    .contact-link {
+      display: inline-block;
+      background: var(--white);
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+    footer strong { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .section { padding: 24px 20px; }
+      .toc { padding: 22px 20px; }
+      .perm-table, .tp-table { font-size: 13px; }
+      .perm-table thead th, .perm-table tbody td,
+      .tp-table thead th, .tp-table tbody td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <div class="logo-wrap">
+    <!-- Globe + hands mini SVG matching app icon -->
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="18" r="11" fill="#42A5F5"/>
+      <ellipse cx="22" cy="18" rx="11" ry="5" fill="none" stroke="#BBDEFB" stroke-width="1"/>
+      <line x1="22" y1="7" x2="22" y2="29" stroke="#BBDEFB" stroke-width="1"/>
+      <path d="M6 38 C6 30 10 26 16 25 C19 24 21 26 21 29 L21 38Z" fill="#BBDEFB"/>
+      <path d="M38 38 C38 30 34 26 28 25 C25 24 23 26 23 29 L23 38Z" fill="#BBDEFB"/>
+      <text x="22" y="23" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial">S</text>
+    </svg>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p>SG Digital Poster — Your trusted digital poster & business growth app</p>
+  <div class="badge">Effective Date: March 14, 2025 &nbsp;·&nbsp; Version 2.2</div>
+</header>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main class="container">
+
+  <!-- Quick Info Cards -->
+  <div class="info-grid" style="margin-bottom:40px;">
+    <div class="info-card">
+      <div class="label">App Name</div>
+      <div class="value">SG Digital Poster</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Package ID</div>
+      <div class="value">com.sgdigitalposter.app</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Developer</div>
+      <div class="value">Sumit Groups</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Platform</div>
+      <div class="value">Android (Play Store)</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Last Updated</div>
+      <div class="value">March 14, 2025</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Contact</div>
+      <div class="value">support@sgdigitalposter.com</div>
+    </div>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#permissions">App Permissions</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#payments">Payments & Billing</a></li>
+      <li><a href="#storage">Data Storage & Security</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Overview -->
+  <div class="section" id="overview">
+    <div class="section-header">
+      <div class="icon-box">📋</div>
+      <h2>1. Overview</h2>
+    </div>
+    <p>
+      Welcome to <strong>SG Digital Poster</strong>, developed and operated by <strong>Sumit Groups</strong>.
+      This Privacy Policy explains how we collect, use, store, and protect your personal information
+      when you use our application.
+    </p>
+    <p>
+      SG Digital Poster is a digital content creation app that helps individuals and businesses
+      create, customize, and share professional poster designs for festivals, promotions,
+      social media, and business branding.
+    </p>
+    <div class="highlight">
+      <strong>By installing or using SG Digital Poster, you agree to the terms described in this Privacy Policy.</strong>
+      If you do not agree, please uninstall the app and discontinue use.
+    </div>
+    <p>
+      This policy applies to all users of the SG Digital Poster Android application
+      (package: <code>com.sgdigitalposter.app</code>) available on the Google Play Store.
+    </p>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="section" id="data-collected">
+    <div class="section-header">
+      <div class="icon-box">📦</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>We collect the following categories of information to provide and improve our services:</p>
+
+    <h3 style="font-size:16px; color:var(--blue-dark); margin:18px 0 10px;">A. Information You Provide Directly</h3>
+    <ul>
+      <li><strong>Account Information:</strong> Name, email address, phone number, and profile photo when you register or log in via Google, Facebook, or WhatsApp.</li>
+      <li><strong>Business Profile:</strong> Business name, logo, address, contact details, and social media links that you add to your business card/profile.</li>
+      <li><strong>User-Created Content:</strong> Posters, designs, images, and text that you create within the app.</li>
+      <li><strong>Payment Details:</strong> Billing name, address, and payment method (processed securely via third-party gateways — we do not store card numbers).</li>
+      <li><strong>Support Queries:</strong> Messages or emails you send to our support team.</li>
+    </ul>
+
+    <h3 style="font-size:16px; color:var(--blue-dark); margin:18px 0 10px;">B. Information Collected Automatically</h3>
+    <ul>
+      <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers (Android ID), and screen resolution.</li>
+      <li><strong>Usage Data:</strong> Features used, screens visited, session duration, crash logs, and app performance data.</li>
+      <li><strong>Network Information:</strong> IP address, mobile network carrier, and connection type (Wi-Fi / mobile data).</li>
+      <li><strong>Advertising ID:</strong> Google Advertising ID for serving personalized advertisements via AdMob.</li>
+      <li><strong>Push Notification Token:</strong> Device token used to send push notifications via OneSignal.</li>
+    </ul>
+
+    <h3 style="font-size:16px; color:var(--blue-dark); margin:18px 0 10px;">C. Information from Third-Party Login</h3>
+    <ul>
+      <li><strong>Google Sign-In:</strong> Name, email, profile photo, and Google account ID.</li>
+      <li><strong>Facebook Login:</strong> Name, email, profile photo, and Facebook user ID.</li>
+      <li><strong>WhatsApp Login:</strong> Phone number used for authentication.</li>
+    </ul>
+  </div>
+
+  <!-- 3. How We Use -->
+  <div class="section" id="how-we-use">
+    <div class="section-header">
+      <div class="icon-box">⚙️</div>
+      <h2>3. How We Use Your Data</h2>
+    </div>
+    <p>We use the information collected for the following purposes:</p>
+    <ul>
+      <li>🔐 <strong>Authentication:</strong> Create and manage your account securely.</li>
+      <li>🎨 <strong>Core App Features:</strong> Enable poster creation, template access, editing, downloading, and sharing.</li>
+      <li>🔔 <strong>Push Notifications:</strong> Send festival reminders, new template alerts, offers, and important updates.</li>
+      <li>💳 <strong>Payment Processing:</strong> Process subscription payments and premium feature purchases.</li>
+      <li>📊 <strong>Analytics:</strong> Understand how users interact with the app to improve features and fix bugs.</li>
+      <li>📢 <strong>Advertising:</strong> Show relevant advertisements through Google AdMob.</li>
+      <li>🛠️ <strong>Customer Support:</strong> Respond to queries, complaints, and technical issues.</li>
+      <li>📋 <strong>Legal Compliance:</strong> Comply with applicable laws, regulations, and court orders.</li>
+      <li>🔒 <strong>Security:</strong> Detect and prevent fraud, abuse, or unauthorized access.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Permissions -->
+  <div class="section" id="permissions">
+    <div class="section-header">
+      <div class="icon-box">🔑</div>
+      <h2>4. App Permissions</h2>
+    </div>
+    <p>SG Digital Poster requests the following device permissions. Each permission is used only for its stated purpose:</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Type</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Camera</strong></td>
+          <td><span class="perm-tag">Dangerous</span></td>
+          <td>Capture photos to use in poster designs and business profiles</td>
+        </tr>
+        <tr>
+          <td><strong>Read External Storage / Media</strong></td>
+          <td><span class="perm-tag">Dangerous</span></td>
+          <td>Access photos from your gallery to add to poster designs</td>
+        </tr>
+        <tr>
+          <td><strong>Write External Storage</strong></td>
+          <td><span class="perm-tag">Dangerous</span></td>
+          <td>Save designed posters to your device</td>
+        </tr>
+        <tr>
+          <td><strong>Internet Access</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Load templates, sync data, process payments, show ads</td>
+        </tr>
+        <tr>
+          <td><strong>Network State</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Check internet connectivity before making API calls</td>
+        </tr>
+        <tr>
+          <td><strong>Post Notifications</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Send push notifications for festivals, offers, and updates</td>
+        </tr>
+        <tr>
+          <td><strong>Vibrate</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Haptic feedback for UI interactions</td>
+        </tr>
+        <tr>
+          <td><strong>Receive Boot Completed</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Re-schedule reminder notifications after device restart</td>
+        </tr>
+        <tr>
+          <td><strong>Billing</strong></td>
+          <td><span class="perm-tag">Normal</span></td>
+          <td>Process in-app purchases and subscriptions via Google Play</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight" style="margin-top:16px;">
+      You can manage or revoke permissions at any time via <strong>Android Settings → Apps → SG Digital Poster → Permissions</strong>. Revoking certain permissions may limit app functionality.
+    </div>
+  </div>
+
+  <!-- 5. Third-Party Services -->
+  <div class="section" id="third-party">
+    <div class="section-header">
+      <div class="icon-box">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <p>
+      SG Digital Poster integrates with the following third-party services. Each service has
+      its own privacy policy and data handling practices:
+    </p>
+
+    <table class="tp-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Data Shared</th>
+          <th>Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Firebase (Google)</strong></td>
+          <td>Authentication, analytics, crash reporting, remote config</td>
+          <td>User ID, device info, usage events</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Sign-In</strong></td>
+          <td>Social login</td>
+          <td>Name, email, profile photo</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google AdMob</strong></td>
+          <td>In-app advertisements</td>
+          <td>Advertising ID, device info</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Facebook SDK</strong></td>
+          <td>Social login, analytics</td>
+          <td>Name, email, Facebook user ID</td>
+          <td><a href="https://www.facebook.com/policy.php" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>OneSignal</strong></td>
+          <td>Push notifications</td>
+          <td>Device token, notification events</td>
+          <td><a href="https://onesignal.com/privacy_policy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Razorpay</strong></td>
+          <td>Payment gateway (India)</td>
+          <td>Name, email, phone, billing info</td>
+          <td><a href="https://razorpay.com/privacy/" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Paytm</strong></td>
+          <td>Payment gateway (India)</td>
+          <td>Phone number, transaction info</td>
+          <td><a href="https://paytm.com/about/privacy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>PhonePe</strong></td>
+          <td>UPI payment gateway</td>
+          <td>UPI ID, transaction data</td>
+          <td><a href="https://www.phonepe.com/privacy-policy/" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Cashfree</strong></td>
+          <td>Payment gateway</td>
+          <td>Name, email, billing info</td>
+          <td><a href="https://www.cashfree.com/privacy-policy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Stripe</strong></td>
+          <td>International payment gateway</td>
+          <td>Name, email, billing info</td>
+          <td><a href="https://stripe.com/in/privacy" target="_blank">View ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>Glide (Image Loading)</strong></td>
+          <td>Load & cache remote images</td>
+          <td>None (local caching only)</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 6. Payments -->
+  <div class="section" id="payments">
+    <div class="section-header">
+      <div class="icon-box">💳</div>
+      <h2>6. Payments &amp; Billing</h2>
+    </div>
+    <p>
+      SG Digital Poster offers premium subscriptions and one-time purchases for access to
+      advanced templates, features, and poster categories.
+    </p>
+    <ul>
+      <li>All payment transactions are processed by our certified third-party payment gateways (Razorpay, Paytm, PhonePe, Cashfree, Stripe).</li>
+      <li><strong>We do not store your full card number, CVV, or net-banking credentials</strong> on our servers.</li>
+      <li>Payment gateways are PCI-DSS compliant and use industry-standard encryption.</li>
+      <li>Transaction records (amount, date, subscription type) are stored to manage your subscription status.</li>
+      <li>Refund requests are subject to our Refund Policy. Contact support within 7 days of purchase for eligible refunds.</li>
+    </ul>
+    <div class="warning">
+      ⚠️ <strong>Subscription Auto-Renewal:</strong> Premium subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Manage subscriptions via Google Play → Subscriptions.
+    </div>
+  </div>
+
+  <!-- 7. Storage & Security -->
+  <div class="section" id="storage">
+    <div class="section-header">
+      <div class="icon-box">🔒</div>
+      <h2>7. Data Storage &amp; Security</h2>
+    </div>
+    <p>
+      Your data security is our priority. Here is how we protect your information:
+    </p>
+    <ul>
+      <li><strong>Encryption in Transit:</strong> All data transmitted between the app and our servers uses HTTPS/TLS encryption.</li>
+      <li><strong>Secure Storage:</strong> Sensitive user data is stored on secured servers with access controls and regular security audits.</li>
+      <li><strong>Firebase Security:</strong> User authentication tokens and database access are protected by Firebase Security Rules.</li>
+      <li><strong>Local Storage:</strong> Designed posters saved locally on your device are stored in your private app directory.</li>
+      <li><strong>Data Retention:</strong> We retain your account data for as long as your account is active. You may request deletion at any time (see Section 10).</li>
+      <li><strong>Server Location:</strong> Data is primarily stored on Google Firebase servers (Mumbai/Asia-South1 region).</li>
+    </ul>
+    <div class="highlight">
+      Despite our best efforts, no method of electronic transmission or storage is 100% secure.
+      We encourage you to use a strong password and keep your device secure.
+    </div>
+  </div>
+
+  <!-- 8. Children -->
+  <div class="section" id="children">
+    <div class="section-header">
+      <div class="icon-box">👶</div>
+      <h2>8. Children's Privacy</h2>
+    </div>
+    <p>
+      SG Digital Poster is designed for users who are <strong>13 years of age or older</strong>.
+      We do not knowingly collect personal information from children under 13.
+    </p>
+    <p>
+      If you are a parent or guardian and believe your child under 13 has provided us with
+      personal information, please contact us immediately at
+      <a href="mailto:support@sgdigitalposter.com" style="color:var(--blue-light);">support@sgdigitalposter.com</a>.
+      We will promptly delete the information from our records.
+    </p>
+  </div>
+
+  <!-- 9. Data Sharing -->
+  <div class="section" id="sharing">
+    <div class="section-header">
+      <div class="icon-box">🤝</div>
+      <h2>9. Data Sharing &amp; Disclosure</h2>
+    </div>
+    <p>We do <strong>not sell, rent, or trade</strong> your personal information to any third party. We may share your data only in the following limited circumstances:</p>
+    <ul>
+      <li>
+        <strong>Service Providers:</strong> Trusted third-party vendors (payment processors, analytics, push notification services) who assist in operating our app, bound by strict confidentiality agreements.
+      </li>
+      <li>
+        <strong>Legal Requirements:</strong> When required by law, court order, or governmental authority.
+      </li>
+      <li>
+        <strong>Business Transfer:</strong> In the event of a merger, acquisition, or asset sale, user data may be transferred. You will be notified in advance.
+      </li>
+      <li>
+        <strong>Safety:</strong> To protect the rights, property, or safety of our users, company, or the public.
+      </li>
+      <li>
+        <strong>With Your Consent:</strong> Any other sharing will only occur with your explicit consent.
+      </li>
+    </ul>
+  </div>
+
+  <!-- 10. Your Rights -->
+  <div class="section" id="rights">
+    <div class="section-header">
+      <div class="icon-box">⚖️</div>
+      <h2>10. Your Rights</h2>
+    </div>
+    <p>You have the following rights regarding your personal data:</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Access</div>
+        <div class="value">Request a copy of data we hold about you</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Correction</div>
+        <div class="value">Update or correct inaccurate information</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Deletion</div>
+        <div class="value">Request deletion of your account and data</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Opt-Out</div>
+        <div class="value">Unsubscribe from marketing notifications</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Portability</div>
+        <div class="value">Export your data in a readable format</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Restriction</div>
+        <div class="value">Limit how we process your data</div>
+      </div>
+    </div>
+
+    <p style="margin-top:18px;">
+      To exercise any of these rights, contact us at
+      <a href="mailto:support@sgdigitalposter.com" style="color:var(--blue-light);">support@sgdigitalposter.com</a>
+      with subject <strong>"Data Request – [Your Right]"</strong>.
+      We will respond within <strong>30 days</strong>.
+    </p>
+
+    <h3 style="font-size:16px; color:var(--blue-dark); margin:18px 0 10px;">How to Delete Your Account</h3>
+    <ol>
+      <li>Open SG Digital Poster → Go to <strong>Profile → Settings</strong></li>
+      <li>Tap <strong>"Delete Account"</strong></li>
+      <li>Confirm deletion — all your data will be permanently removed within 30 days</li>
+    </ol>
+    <p style="margin-top:10px;">
+      Alternatively, email us at
+      <a href="mailto:support@sgdigitalposter.com" style="color:var(--blue-light);">support@sgdigitalposter.com</a>
+      with subject <strong>"Account Deletion Request"</strong>.
+    </p>
+  </div>
+
+  <!-- 11. Changes -->
+  <div class="section" id="changes">
+    <div class="section-header">
+      <div class="icon-box">📝</div>
+      <h2>11. Changes to This Policy</h2>
+    </div>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices,
+      technology, legal requirements, or other factors. When we make material changes:
+    </p>
+    <ul>
+      <li>The <strong>"Effective Date"</strong> at the top of this page will be updated.</li>
+      <li>We will notify you via a push notification or an in-app banner.</li>
+      <li>For significant changes, we may require you to re-accept the policy before continuing to use the app.</li>
+    </ul>
+    <p>
+      We encourage you to review this Privacy Policy periodically.
+      Continued use of the app after any changes constitutes acceptance of the revised policy.
+    </p>
+  </div>
+
+  <!-- 12. Contact -->
+  <div class="section" id="contact">
+    <div class="section-header">
+      <div class="icon-box">📬</div>
+      <h2>12. Contact Us</h2>
+    </div>
+    <p>
+      If you have any questions, concerns, or requests related to this Privacy Policy or
+      your personal data, please reach out to us:
+    </p>
+    <ul>
+      <li><strong>Company:</strong> Sumit Groups</li>
+      <li><strong>App:</strong> SG Digital Poster</li>
+      <li><strong>Email:</strong> <a href="mailto:support@sgdigitalposter.com" style="color:var(--blue-light);">support@sgdigitalposter.com</a></li>
+      <li><strong>Play Store:</strong> <a href="https://play.google.com/store/apps/details?id=com.sgdigitalposter.app" style="color:var(--blue-light);">com.sgdigitalposter.app</a></li>
+    </ul>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="contact-card">
+    <h3>Have a Privacy Concern?</h3>
+    <p>We take your privacy seriously. Our team typically responds within 24–48 hours.</p>
+    <a href="mailto:support@sgdigitalposter.com" class="contact-link">
+      ✉️ &nbsp; Contact Our Privacy Team
+    </a>
+  </div>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <p>
+    &copy; 2025 <strong>Sumit Groups</strong> · SG Digital Poster · All rights reserved.
+  </p>
+  <p style="margin-top:6px; font-size:12px; opacity:0.6;">
+    Package: com.sgdigitalposter.app &nbsp;|&nbsp; Version 2.2 &nbsp;|&nbsp;
+    Last updated: March 14, 2025
+  </p>
+</footer>
+
+</body>
+</html>

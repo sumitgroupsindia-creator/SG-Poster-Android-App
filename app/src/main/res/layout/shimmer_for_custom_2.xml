@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textView7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/viewOne"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_marginEnd="@dimen/_100ssp"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            android:layout_marginStart="@dimen/_50ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewOne"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textView"
+        android:layout_marginTop="@dimen/_8ssp"
+        app:layout_constraintTop_toBottomOf="@id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/viewOne1"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_width="@dimen/_45ssp"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/viewOne2"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_width="@dimen/_85ssp"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@id/viewOne1"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/viewOne3"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_width="@dimen/_80ssp"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@id/viewOne2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewOne4"
+            android:layout_marginTop="@dimen/_4ssp"
+            android:layout_width="@dimen/_70ssp"
+            android:layout_height="@dimen/_15ssp"
+            android:background="@color/gray"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@id/viewOne3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

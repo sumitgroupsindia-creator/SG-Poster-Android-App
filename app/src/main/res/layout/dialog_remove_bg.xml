@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_login_screen">
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8ssp"
+        android:text="Image Preview"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100ssp"
+                android:layout_height="@dimen/_100ssp"
+                android:layout_marginHorizontal="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:elevation="@dimen/_4ssp"
+                app:cardCornerRadius="@dimen/_4ssp"
+                app:layout_constraintEnd_toStartOf="@+id/divider5"
+                app:layout_constraintTop_toTopOf="@+id/divider5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/previewImageLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/normalPreviewImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/spaceholder" />
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/ovalPreviewImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:visibility="gone"
+                            app:shapeDrawable="@drawable/a_frame_shape_oval"
+                            android:src="@drawable/spaceholder" />
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/diamondPreviewImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:visibility="gone"
+                            app:shapeDrawable="@drawable/ic_diamond_shap"
+                            android:src="@drawable/spaceholder" />
+
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/squarePreviewImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:visibility="gone"
+                            android:src="@drawable/spaceholder"
+                            app:shapeDrawable="@drawable/ic_frame_shape_square" />
+
+                    </RelativeLayout>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        android:visibility="gone"
+                        android:scaleType="fitXY"
+                        app:lottie_fileName="scan.json"
+                        app:lottie_loop="true" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15ssp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/llShape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="@dimen/_5ssp"
+                        android:id="@+id/normalLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/normal_img"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:background="@drawable/black_border"
+                            android:src="@drawable/editor_bg"
+                            android:scaleType="centerCrop"/>
+                        <TextView
+                            android:layout_marginTop="@dimen/_5ssp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/normal"
+                            android:textSize="@dimen/_13ssp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/_20ssp"
+                        android:gravity="center"
+                        android:padding="@dimen/_5ssp"
+                        android:id="@+id/ovalLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/oval_img"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:src="@drawable/editor_bg"
+                            android:scaleType="centerCrop"
+                            app:shapeDrawable="@drawable/a_frame_shape_oval"/>
+                        <TextView
+                            android:layout_marginTop="@dimen/_5ssp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/label_oval"
+                            android:textSize="@dimen/_13ssp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/_20ssp"
+                        android:gravity="center"
+                        android:padding="@dimen/_5ssp"
+                        android:id="@+id/diamondLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/diamond_img"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:src="@drawable/editor_bg"
+                            android:scaleType="centerCrop"
+                            app:shapeDrawable="@drawable/ic_diamond_shap"/>
+                        <TextView
+                            android:layout_marginTop="@dimen/_5ssp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/diamond"
+                            android:textSize="@dimen/_13ssp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/_20ssp"
+                        android:gravity="center"
+                        android:padding="@dimen/_5ssp"
+                        android:id="@+id/squareLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.sgdigitalposter.app.utils.ShapesImage
+                            android:id="@+id/square_img"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:src="@drawable/editor_bg"
+                            android:scaleType="centerCrop"
+                            app:shapeDrawable="@drawable/ic_frame_shape_square"/>
+                        <TextView
+                            android:layout_marginTop="@dimen/_5ssp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/square"
+                            android:textSize="@dimen/_13ssp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btn_use_this"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8ssp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/active_color"
+                android:text="Use This"
+                android:textAllCaps="false"
+                android:textColor="@color/al_white"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_real"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8ssp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/active_color"
+                android:text="Use This"
+                android:textAllCaps="false"
+                android:textColor="@color/al_white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_bo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_2ssp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_color"
+                android:text="Use Original"
+                android:textAllCaps="false"
+                android:textColor="@color/al_white"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv_remove"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100ssp"
+                android:layout_height="@dimen/_100ssp"
+                android:layout_marginHorizontal="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:elevation="@dimen/_4ssp"
+                app:cardCornerRadius="@dimen/_4ssp"
+                app:layout_constraintStart_toEndOf="@+id/divider5"
+                app:layout_constraintTop_toTopOf="@+id/divider5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:srcCompat="@drawable/tpbg" />
+
+                    <ImageView
+                        android:id="@+id/iv_remove"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tpbg"
+                        android:scaleType="fitCenter"
+                        />
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8ssp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/active_color"
+                android:text="Use This"
+                android:textAllCaps="false"
+                android:textColor="@color/al_white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_2ssp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_color"
+                android:text="Erase Manually"
+                android:textAllCaps="false"
+                android:textColor="@color/al_white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

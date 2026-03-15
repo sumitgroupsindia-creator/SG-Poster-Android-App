@@ -1,0 +1,220 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('brandpeak.jks')
+            storePassword 'Deep@237'
+            keyPassword 'Deep@237'
+            keyAlias 'brandpeak'
+        }
+    }
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.sgdigitalposter.app"
+        minSdk 24
+        targetSdk 35
+        versionCode 38
+        versionName "2.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach { output ->
+            outputFileName = new File("BrandPeak-"+"V-"+ variant.versionName+".apk");
+        }
+        setProperty("archivesBaseName", "BrandPeak-$versionName-VC$versionCode")
+    }
+
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            // signingConfig signingConfigs.release
+            //  signingConfig signingConfigs.release
+        }
+
+      /*  debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            //  signingConfig signingConfigs.release
+        }*/
+
+    }
+
+
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    namespace 'com.sgdigitalposter.app'
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.compose.ui:ui-text:1.5.4'
+//    implementation 'com.arthenica:ffmpeg-kit-full:6.0-2'
+//    implementation("com.github.AliAkhgar:ffmpeg-kit-16KB:f63df34655")
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //Glide Dependencies
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    //Dimen
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //Circle ImageView
+    implementation 'com.mikhaellopez:circularimageview:4.3.0' //latest 4.3.1
+
+    //Shimmer Effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Room Database Latest Version 2.6.1
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:2.6.1"
+    annotationProcessor "androidx.room:room-compiler:2.6.1"
+
+    // Lifecycle Arch
+    implementation "androidx.lifecycle:lifecycle-runtime:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.2"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.6.2"
+
+    //Refresh Layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //Animation
+    implementation 'com.airbnb.android:lottie:5.2.0' //latest 6.4.0
+
+    //Color Picker
+    implementation 'com.jaredrummler:colorpicker:1.1.0'
+
+    //Permission
+    implementation 'com.karumi:dexter:6.2.3'
+
+    //Crop Image
+    implementation 'com.github.yalantis:ucrop:2.2.6'  //Lestest 2.2.8
+
+
+
+    //Google Login
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-analytics:22.2.0'
+    implementation 'com.google.firebase:firebase-config:22.1.0'
+    implementation 'com.google.firebase:firebase-auth:23.1.0'
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity:18.0.0'
+
+
+    implementation 'androidx.browser:browser:1.8.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //RazorPay
+    implementation 'com.razorpay:checkout:1.6.40'
+
+    //Loader
+//    implementation 'com.agrawalsuneet.androidlibs:loaderspack:1.2.3'
+
+    //One Signal
+    implementation 'com.onesignal:OneSignal:[5.0.0, 5.1.99]' //This Latest Version
+
+    //Video Player
+//    implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
+
+    implementation "androidx.media3:media3-exoplayer:1.2.1"
+    implementation "androidx.media3:media3-exoplayer-dash:1.2.1"
+    implementation "androidx.media3:media3-ui:1.2.1"
+    implementation "androidx.media3:media3-exoplayer-hls:1.2.1"
+
+
+
+    //FFMPEG
+//    implementation 'com.arthenica:mobile-ffmpeg-full-gpl:4.4.LTS'
+//    implementation 'com.arthenica:mobile-ffmpeg-min-gpl:4.4.LTS'
+//
+    //Admob
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+    //  implementation 'com.google.android.gms:play-services-ads:21.2.0'
+
+
+    //Country Code
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+    implementation 'io.michaelrocks:libphonenumber-android:8.13.13'
+
+
+    //BG Remove
+    implementation group: 'org.tensorflow', name: 'tensorflow-android', version: '1.13.1'
+    implementation 'androidx.palette:palette:1.0.0'
+
+    //ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //CasFree
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.cashfree.pg:api:2.1.6'
+
+    //DragList
+    implementation 'com.github.woxthebox:draglistview:1.7.2' //Latest 1.7.3
+
+    //Lopping ViewPager
+    implementation 'com.asksira.android:loopingviewpager:1.4.1'
+
+    //Facebook SDK
+    implementation 'com.facebook.android:facebook-android-sdk:16.3.0'
+
+    //Stripe
+    implementation 'com.stripe:stripe-android:20.21.1' //Latest 20.28.2
+
+    //Paytm
+    implementation 'com.paytm.appinvokesdk:appinvokesdk:1.6.14' //Latest 1.7.1
+
+    //Phonepe
+    implementation 'phonepe.intentsdk.android.release:IntentSDK:2.4.1'
+
+    //Gson Converter
+    implementation 'com.google.code.gson:gson:2.9.1' //Latest 2.10.1
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //Latest 2.11.0
+
+    //Logging Interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0' //Latest 4.12.0
+
+
+}

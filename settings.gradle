@@ -1,0 +1,41 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android"
+        }
+        maven
+                {
+                    url 'https://maven.cashfree.com/release'
+                    content {
+                        includeGroup "com.cashfree.pg"
+                    }
+                }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://artifactory.paytm.in/libs-release-local"
+        }
+        maven {
+            url "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android"
+        }
+        maven
+                {
+                    url 'https://maven.cashfree.com/release'
+                    content {
+                        includeGroup "com.cashfree.pg"
+                    }
+                }
+    }
+}
+rootProject.name = "BrandPeak_13_5_25"
+include ':app'

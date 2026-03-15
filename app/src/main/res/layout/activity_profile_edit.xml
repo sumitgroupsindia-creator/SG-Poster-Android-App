@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color"
+        tools:context="com.example.brandpeak.com.sgdigitalposter.app.ui.activities.AddBusinessActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_layout"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/bg_login_screen"
+            android:paddingHorizontal="@dimen/_15ssp"
+            app:layout_constraintBottom_toTopOf="@+id/ll_adview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:layout_marginBottom="@dimen/_5ssp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_15ssp">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/iv_business"
+                                android:layout_width="@dimen/_80ssp"
+                                android:layout_height="@dimen/_80ssp"
+                                android:src="@drawable/ic_profile"
+                                app:civ_border_color="@color/primary_color"
+                                app:civ_border_width="2dp"
+                                app:civ_shadow="true"
+                                app:civ_shadow_color="#20000000"
+                                app:civ_shadow_radius="6dp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_26ssp"
+                                android:layout_height="@dimen/_26ssp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_camera_badge"
+                                android:padding="5dp"
+                                android:src="@drawable/ic_camera_alt" />
+
+                        </FrameLayout>
+
+                        <Button
+                            android:id="@+id/btn_add_image"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_30ssp"
+                            android:layout_marginTop="@dimen/_8ssp"
+                            android:paddingHorizontal="@dimen/_20ssp"
+                            android:text="Upload Photo"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_color"
+                            android:textSize="13sp"
+                            app:cornerRadius="20dp"
+                            app:icon="@drawable/ic_photo"
+                            app:iconSize="16dp"
+                            app:iconTint="@color/primary_color"
+                            app:strokeColor="@color/primary_color"
+                            app:strokeWidth="1dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:text="@string/name"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_business"
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3ssp"
+                    android:background="@drawable/white_shape_edit"
+                    android:hint="@string/hint_name"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="@dimen/_8ssp"
+                    android:paddingVertical="@dimen/_8ssp"
+                    app:fonts='@{"normal"}'
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:text="@string/email"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintStart_toStartOf="@+id/etBusinessName"
+                    app:layout_constraintTop_toBottomOf="@+id/etBusinessName"
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3ssp"
+                    android:background="@drawable/white_shape_edit"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/_8ssp"
+                    android:paddingVertical="@dimen/_8ssp"
+                    app:fonts='@{"normal"}'
+                    app:layout_constraintEnd_toEndOf="@+id/etBusinessName"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:text="@string/phone"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintStart_toStartOf="@+id/etBusinessName"
+                    app:layout_constraintTop_toBottomOf="@+id/etBusinessNumber"
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/CountryCodePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginVertical="@dimen/_2ssp"
+                        android:layout_marginStart="@dimen/_2ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:background="@drawable/white_shape_edit"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_5ssp"
+                        android:paddingRight="@dimen/_5ssp"
+                        android:visibility="visible"
+                        app:ccp_dialogTextColor="@color/black"
+                        app:ccp_textColor="@color/black"
+                        app:ccp_textSize="@dimen/_10ssp" />
+
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:background="@drawable/white_shape_edit"
+                        android:hint="@string/hint_phone_number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingHorizontal="@dimen/_8ssp"
+                        android:paddingVertical="@dimen/_8ssp"
+                        app:fonts='@{"normal"}'
+                        app:textSize='@{"font_body_s_size"}' />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_10ssp"
+                    android:backgroundTint="@color/blue_color"
+                    android:paddingHorizontal="@dimen/_10ssp"
+                    android:paddingVertical="@dimen/_8ssp"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/al_white"
+                    app:fonts='@{"bold"}'
+                    app:textSize='@{"button_text_16"}' />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_adview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+
+    <!-- ===================== OUTER CIRCULAR SWIRL ===================== -->
+    <!-- Main circular arc wrapping around the SG monogram (top-right sweep) -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M140,18 C186,18 224,46 234,88 C236,96 232,104 222,102 C212,100 208,92 204,82 C194,54 170,36 140,36 C104,36 74,66 74,102 C74,120 82,136 96,148 L86,160 C68,146 56,126 56,102 C56,56 94,18 140,18 Z"/>
+
+    <!-- Inner swirl arc (bottom-left sweep) -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M140,186 C94,186 56,158 46,116 C44,108 48,100 58,102 C68,104 72,112 76,122 C86,150 110,168 140,168 C176,168 206,138 206,102 C206,86 200,70 188,60 L198,48 C214,62 222,80 222,102 C222,148 184,186 140,186 Z"/>
+
+    <!-- ===================== LETTER S ===================== -->
+    <!-- S shape stroke for clean rendering -->
+    <path
+        android:strokeColor="#1565C0"
+        android:strokeWidth="13"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M166,60 C156,48 142,42 126,48 C110,56 102,68 102,84 C102,100 112,110 130,116 L148,122 C166,128 176,140 176,156 C176,174 162,186 144,190 C126,194 110,186 100,170"/>
+
+    <!-- Metallic shine on S curve -->
+    <path
+        android:fillColor="#42A5F5"
+        android:fillAlpha="0.35"
+        android:pathData="M130,52 C120,58 114,68 114,82 C114,88 118,94 124,98 C120,88 122,72 130,60 Z"/>
+
+    <!-- ===================== LETTER g ===================== -->
+    <!-- g stem and descender -->
+    <path
+        android:strokeColor="#1565C0"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M192,102 C192,102 192,160 192,160 C192,182 178,196 156,200"/>
+    <!-- g bowl circle -->
+    <path
+        android:strokeColor="#1565C0"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M192,118 C200,108 204,96 200,84 C196,72 186,66 178,70 C170,74 168,84 172,94 C176,106 188,114 192,118"/>
+
+    <!-- ===================== LEFT HAND ===================== -->
+    <!-- Left palm - smooth cupped shape -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M38,250 C44,224 56,210 76,202 C92,196 106,198 114,208 C120,216 118,226 112,234 L92,246 Z"/>
+    <!-- Left hand inner highlight -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M48,248 C54,228 64,216 80,208 C90,204 98,206 104,210 C96,214 84,222 74,236 Z"/>
+    <!-- Left fingers -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M78,202 L74,186 C74,180 78,176 84,176 C90,176 94,180 94,186 L92,200"/>
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M92,198 L90,180 C90,174 94,170 100,170 C106,170 110,174 110,180 L108,196"/>
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M108,196 L108,182 C108,176 112,172 118,172 C124,172 128,176 128,182 L126,198"/>
+
+    <!-- ===================== RIGHT HAND ===================== -->
+    <!-- Right palm - smooth cupped shape -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M242,250 C236,224 224,210 204,202 C188,196 174,198 166,208 C160,216 162,226 168,234 L188,246 Z"/>
+    <!-- Right hand inner highlight -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M232,248 C226,228 216,216 200,208 C190,204 182,206 176,210 C184,214 196,222 206,236 Z"/>
+    <!-- Right fingers -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M202,202 L206,186 C206,180 202,176 196,176 C190,176 186,180 186,186 L188,200"/>
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M188,198 L190,180 C190,174 186,170 180,170 C174,170 170,174 170,180 L172,196"/>
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M172,196 L172,182 C172,176 168,172 162,172 C156,172 152,176 152,182 L154,198"/>
+
+    <!-- Hand connection glow -->
+    <path
+        android:fillColor="#1976D2"
+        android:fillAlpha="0.3"
+        android:pathData="M92,246 Q140,232 188,246 L140,240 Z"/>
+
+    <!-- ===================== SG DIGITAL POSTER TEXT ===================== -->
+    <!-- S -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M56,264 C56,262 58,261 60,261 C62,261 64,261 64,263 C64,264 63,265 61,265 C59,265 57,266 57,268 C57,270 59,271 61,271 C63,271 65,270 65,270 L65,272 C64,272 63,273 61,273 C58,273 55,271 55,268 C55,266 57,265 59,264 C57,264 56,263 56,264 Z"/>
+    <!-- G -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M68,267 C68,263 71,261 74,261 C76,261 78,262 78,262 L78,264 C77,263 76,263 74,263 C72,263 70,265 70,267 C70,269 72,271 74,271 C75,271 76,271 76,270 L76,268 L74,268 L74,266 L78,266 L78,271 C77,272 76,273 74,273 C71,273 68,271 68,267 Z"/>
+    <!-- D -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M88,261 L91,261 C94,261 96,264 96,267 C96,270 94,273 91,273 L88,273 Z M90,263 L91,263 C93,263 94,265 94,267 C94,269 93,271 91,271 L90,271 Z"/>
+    <!-- I -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M99,261 L101,261 L101,273 L99,273 Z"/>
+    <!-- G -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M104,267 C104,263 107,261 110,261 C112,261 114,262 114,262 L114,264 C113,263 112,263 110,263 C108,263 106,265 106,267 C106,269 108,271 110,271 C111,271 112,271 112,270 L112,268 L110,268 L110,266 L114,266 L114,271 C113,272 112,273 110,273 C107,273 104,271 104,267 Z"/>
+    <!-- I -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M117,261 L119,261 L119,273 L117,273 Z"/>
+    <!-- T -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M122,261 L130,261 L130,263 L127,263 L127,273 L125,273 L125,263 L122,263 Z"/>
+    <!-- A -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M132,273 L136,261 L138,261 L142,273 L140,273 L139,270 L135,270 L134,273 Z M137,263 L136,268 L138,268 Z"/>
+    <!-- L -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M144,261 L146,261 L146,271 L150,271 L150,273 L144,273 Z"/>
+    <!-- P -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M160,261 L163,261 C165,261 167,262 167,265 C167,268 165,269 163,269 L162,269 L162,273 L160,273 Z M162,263 L162,267 L163,267 C164,267 165,266 165,265 C165,264 164,263 163,263 Z"/>
+    <!-- O -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M169,267 C169,263 172,261 175,261 C178,261 181,263 181,267 C181,271 178,273 175,273 C172,273 169,271 169,267 Z M171,267 C171,270 173,271 175,271 C177,271 179,270 179,267 C179,264 177,263 175,263 C173,263 171,264 171,267 Z"/>
+    <!-- S -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M183,264 C183,262 185,261 187,261 C189,261 191,261 191,263 C191,264 190,265 188,265 C186,265 184,266 184,268 C184,270 186,271 188,271 C190,271 192,270 192,270 L192,272 C191,272 190,273 188,273 C185,273 182,271 182,268 C182,266 184,265 186,264 C184,264 183,263 183,264 Z"/>
+    <!-- T -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M194,261 L202,261 L202,263 L199,263 L199,273 L197,273 L197,263 L194,263 Z"/>
+    <!-- E -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M204,261 L210,261 L210,263 L206,263 L206,266 L210,266 L210,268 L206,268 L206,271 L210,271 L210,273 L204,273 Z"/>
+    <!-- R -->
+    <path android:fillColor="#0D47A1"
+        android:pathData="M213,261 L216,261 C218,261 220,262 220,265 C220,267 219,268 217,269 L220,273 L218,273 L215,269 L215,273 L213,273 Z M215,263 L215,267 L216,267 C217,267 218,266 218,265 C218,264 217,263 216,263 Z"/>
+
+</vector>

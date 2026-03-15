@@ -1,0 +1,22 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        agp_version = '8.3.2'
+    }
+    dependencies {
+        // Add this line
+        classpath 'com.google.gms:google-services:4.4.0'
+        // Some other needed classpath
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.10, 0.99.99]'
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.6")
+    }
+}
+plugins {
+    id 'com.android.application' version '8.3.2' apply false
+    id 'com.android.library' version '8.1.1' apply false
+}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

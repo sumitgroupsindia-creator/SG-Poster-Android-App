@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1054038414777",
+    "project_id": "sg-digital-poster",
+    "storage_bucket": "sg-digital-poster.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054038414777:android:3713df9c7897250ad89268",
+        "android_client_info": {
+          "package_name": "com.sgdigitalposter.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFFltfgyhEfnouKUEPqaHzNPgKiMczA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
