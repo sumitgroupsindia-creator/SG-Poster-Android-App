@@ -22,10 +22,30 @@
 -keep class com.sgdigitalposter.app.databinding.** { *; }
 
 # Keep model/data classes (prevent field name obfuscation for Gson/Firebase)
--keepclassmembers class com.sgdigitalposter.app.models.** { *; }
--keepclassmembers class com.sgdigitalposter.app.pojo.** { *; }
--keepclassmembers class com.iqueen.brandpeak.models.** { *; }
--keepclassmembers class com.iqueen.brandpeak.pojo.** { *; }
+# NOTE: The actual model classes are in the 'items' package, not 'models' or 'pojo'
+-keep class com.iqueen.brandpeak.items.** { *; }
+-keep class com.sgdigitalposter.app.items.** { *; }
+
+# Keep API response/status classes
+-keep class com.iqueen.brandpeak.api.** { *; }
+-keep class com.sgdigitalposter.app.api.** { *; }
+
+# Keep Room database and converters
+-keep class com.iqueen.brandpeak.database.** { *; }
+-keep class com.sgdigitalposter.app.database.** { *; }
+
+# Keep ViewModel classes
+-keep class com.iqueen.brandpeak.viewmodel.** { *; }
+-keep class com.sgdigitalposter.app.viewmodel.** { *; }
+
+# Keep repository classes
+-keep class com.iqueen.brandpeak.repository.** { *; }
+-keep class com.sgdigitalposter.app.repository.** { *; }
+
+# Keep classes with @SerializedName annotations (safety net)
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
 
 # Keep Gson serialized/deserialized classes
 -keepattributes Signature
@@ -51,6 +71,39 @@
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
     @retrofit2.http.* <methods>;
 }
+
+# Keep Retrofit call adapter and converter factories
+-keep class * extends retrofit2.CallAdapter$Factory { *; }
+-keep class * extends retrofit2.Converter$Factory { *; }
+
+# CRITICAL: Keep generic type info for LiveData + Retrofit integration
+# Without this, R8 strips ParameterizedType info and causes ClassCastException
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+# Keep LiveData call adapter classes
+-keep class com.sgdigitalposter.app.api.common.** { *; }
+-keep class com.iqueen.brandpeak.api.common.** { *; }
+
+# Keep ApiService interface methods with full generic signatures
+# CRITICAL: -keep (not -keepnames) to prevent obfuscation of return types
+-keep interface com.sgdigitalposter.app.api.ApiService { *; }
+-keep interface com.iqueen.brandpeak.api.ApiService { *; }
+
+# Keep ApiResponse generic type information
+-keep class com.sgdigitalposter.app.api.ApiResponse { *; }
+-keep class com.iqueen.brandpeak.api.ApiResponse { *; }
+
+# CRITICAL: Keep LiveData class name so Retrofit can resolve ParameterizedType
+-keep class androidx.lifecycle.LiveData { *; }
+-keep class androidx.lifecycle.MutableLiveData { *; }
+-keep class androidx.lifecycle.MediatorLiveData { *; }
+
+# Preserve generic signatures for Retrofit and LiveData (prevents ClassCastException)
+-keepattributes Signature
+-keepattributes InnerClasses
+-keepattributes EnclosingMethod
 
 # Keep OneSignal
 -keep class com.onesignal.** { *; }

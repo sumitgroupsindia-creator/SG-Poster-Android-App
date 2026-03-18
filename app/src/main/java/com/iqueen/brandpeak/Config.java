@@ -24,7 +24,7 @@ public class Config {
 //    public static final String APP_API_URL = "https://iqueenstudio.com/demo/"; //Demo
 //    public static String API_KEY = "123456";
 
-    public static final String APP_API_URL = "https://sumitgroups.com/"; //Live
+    public static final String APP_API_URL = "https://panel.sumitgroups.com/"; //Live
     public static String API_KEY = "036a1d38e08642d184f8c5be7fb09346";
 
 
