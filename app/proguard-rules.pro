@@ -55,6 +55,10 @@
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
 
+# CRITICAL: Keep TypeToken generic signatures (R8 strips them causing crashes)
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
+
 # Keep Firebase
 -keep class com.google.firebase.** { *; }
 
