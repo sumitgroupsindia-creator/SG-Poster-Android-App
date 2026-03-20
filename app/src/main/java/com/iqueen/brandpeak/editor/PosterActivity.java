@@ -3574,6 +3574,18 @@ public class PosterActivity extends AppCompatActivity implements RelStickerView.
 
                 if (jsonObject1.getString("name").equals("logo")) {
                     String str = saveSticker(name, businessItem.name, businessItem.logo);
+                } else if (jsonObject1.getString("name").equals("candidate")) {
+                    String userImage = prefManager.getString(Constant.USER_IMAGE);
+                    if (userImage != null && !userImage.isEmpty()) {
+                        // Delete cached default candidate.png so user's photo is downloaded
+                        String dir = new StorageUtils(activity).getPackageStorageDir("/."
+                                + name + "/").getAbsolutePath();
+                        File cachedFile = new File(dir + "/candidate.png");
+                        if (cachedFile.exists()) {
+                            cachedFile.delete();
+                        }
+                        String str = saveSticker(name, "candidate", userImage);
+                    }
                 } else {
                     if (prefManager.getString(Constant.DIGITAL_ENABLE).equals(Config.ONE)) {
                         String str = saveSticker(name, jsonObject1.getString("name"),
@@ -3588,6 +3600,8 @@ public class PosterActivity extends AppCompatActivity implements RelStickerView.
                 String stickerPath;
                 if (jsonObject1.getString("name").equals("logo")) {
                     stickerPath = directory + "/" + businessItem.name + ".png";
+                } else if (jsonObject1.getString("name").equals("candidate")) {
+                    stickerPath = directory + "/candidate.png";
                 } else {
                     stickerPath = directory + "/" + jsonObject1.getString("name") + ".png";
                 }

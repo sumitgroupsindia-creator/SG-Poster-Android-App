@@ -107,6 +107,7 @@ public class LoadFrameFragment extends Fragment {
     float rotation = 0.0f;
     private BusinessItem businessItem;
     FragmentLoadFrameBinding binding;
+    private PrefManager prefManager;
     public LoadFrameFragment(DynamicFrameItem iArr, float wr, float hr) {
         this.model = iArr;
         this.wr = wr;
@@ -116,7 +117,7 @@ public class LoadFrameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentLoadFrameBinding.inflate(getLayoutInflater());
-        //prefManager = new PrefManager(requireActivity());
+        prefManager = new PrefManager(requireActivity());
         context = getActivity();
         ratio = "1:1";
         businessItem = (BusinessItem) requireActivity().getIntent().getSerializableExtra(Constant.INTENT_BUSINESS_ITEM);
@@ -768,6 +769,18 @@ public class LoadFrameFragment extends Fragment {
                 if (jsonObject1.getString("name").equals("logo")) {
                     String str = saveSticker(name, businessItem.name,
                             businessItem.logo);
+                } else if (jsonObject1.getString("name").equals("candidate")) {
+                    String userImage = prefManager.getString(Constant.USER_IMAGE);
+                    if (userImage != null && !userImage.isEmpty()) {
+                        // Delete cached default candidate.png so user's photo is downloaded
+                        String dir = new StorageUtils(requireActivity()).getPackageStorageDir("/."
+                                + name + "/").getAbsolutePath();
+                        File cachedFile = new File(dir + "/candidate.png");
+                        if (cachedFile.exists()) {
+                            cachedFile.delete();
+                        }
+                        String str = saveSticker(name, "candidate", userImage);
+                    }
                 } else {
 //                    if (prefManager.getString(Constant.DIGITAL_ENABLE).equals(Config.ONE)) {
 //                        String str = saveSticker(name, jsonObject1.getString("name"),
@@ -782,6 +795,8 @@ public class LoadFrameFragment extends Fragment {
                 String stickerPath;
                 if (jsonObject1.getString("name").equals("logo")) {
                     stickerPath = directory + "/" + businessItem.name + ".png";
+                } else if (jsonObject1.getString("name").equals("candidate")) {
+                    stickerPath = directory + "/candidate.png";
                 } else {
                     stickerPath = directory + "/" + jsonObject1.getString("name") + ".png";
                 }
