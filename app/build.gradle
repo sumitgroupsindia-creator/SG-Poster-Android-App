@@ -18,8 +18,8 @@ android {
         applicationId "com.sgdigitalposter.app"
         minSdk 24
         targetSdk 35
-        versionCode 44
-        versionName "2.8"
+        versionCode 45
+        versionName "2.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // Only include ARM ABIs - x86/x86_64 TensorFlow libs are not 16KB aligned
