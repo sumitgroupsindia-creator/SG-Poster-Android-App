@@ -9,7 +9,7 @@ public class Config {
      * AppVersion
      * Current App Version
      */
-    public static String APP_VERSION = "1.8.2";
+    public static String APP_VERSION = "2.8";
 
     /**
      * API Related
